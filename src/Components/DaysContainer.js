@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 function DaysContainer(props) {
     const [date, setDate] = useState(1)
-    const dateAsStr = String(date)
+    const dateAsStr = String(props.aDate)
     let dateAsDate = 'fail'
     const dateAsArr = dateAsStr.split('-');
     dateAsDate = new Date(dateAsArr[0], (dateAsArr[1]-1), dateAsArr[2])
@@ -19,7 +19,7 @@ function DaysContainer(props) {
         <div>
             <h2>This is a title!</h2>
             <input type="date" value={date} onChange={e => setDate(e.target.value)} />
-            <button onClick={props.dayChange}  >Go!</button>
+            <button onClick={()=>props.dayChange(date)}  >Go!</button>
             <br />
             <p>Date entered:  {props.aDate}</p>
             <br />
@@ -31,6 +31,7 @@ function DaysContainer(props) {
             
             <p>{date5}</p>
             <p>Days between: {daysBetween}</p>
+            
         </div>
     )
 }

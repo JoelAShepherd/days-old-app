@@ -6,7 +6,7 @@ const daysReducer = (state = initState, action) => {
     switch(action.type){
         case DAY_CHANGE:
             return{
-                ...state, aDate: action.aDate
+                aDate: action.aDate
             }
         default:
             return state

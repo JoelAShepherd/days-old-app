@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
+import {dayChange} from './index'
+import {connect} from 'react-redux'
 
-function DaysContainer() {
-    const [date, setDate] = useState()
+function DaysContainer(props) {
+    const [date, setDate] = useState(1)
     const dateAsStr = String(date)
     let dateAsDate = 'fail'
     const dateAsArr = dateAsStr.split('-');
@@ -17,8 +19,9 @@ function DaysContainer() {
         <div>
             <h2>This is a title!</h2>
             <input type="date" value={date} onChange={e => setDate(e.target.value)} />
+            <button onClick={props.dayChange}  >Go!</button>
             <br />
-            <p>Date entered:  {date}</p>
+            <p>Date entered:  {props.aDate}</p>
             <br />
             <p>Today's date:  {Intl.DateTimeFormat("en-GB", {
                 year: "numeric",
@@ -32,4 +35,18 @@ function DaysContainer() {
     )
 }
 
-export default DaysContainer
+const mapStateToProps = state => {
+    return {
+        aDate: state.aDate
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        dayChange: dateAsStr => dispatch(dayChange(dateAsStr))
+    }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DaysContainer)

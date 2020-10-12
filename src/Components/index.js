@@ -1,1 +1,2 @@
-export {dayChange} from './Redux/daysAction'
+export {dayChange} from './Redux/Days/daysAction'
+export * from './Redux/Events/eventActions'

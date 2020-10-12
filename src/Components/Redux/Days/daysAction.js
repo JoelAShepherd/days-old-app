@@ -1,8 +1,8 @@
 import {DAY_CHANGE} from './dayTypes'
 
-export const dayChange = (date) =>{
+export const dayChange = (newDate) =>{
     return{
         type: DAY_CHANGE,
-        aDate: date
+        date: newDate
     }
 }

@@ -1,8 +1,8 @@
 import {createStore, applyMiddleware} from 'redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import logger from 'redux-logger'
-import daysReducer from './Redux/Days/daysReducer'
+import rootReducer from './Redux/rootReducer'
 
-const store = createStore(daysReducer, composeWithDevTools(applyMiddleware(logger)))
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(logger)))
 
 export default store

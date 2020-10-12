@@ -8,7 +8,7 @@ function DaysContainer(props) {
     let dateAsDate = 'fail'
     const dateAsArr = dateAsStr.split('-');
     dateAsDate = new Date(dateAsArr[0], (dateAsArr[1]-1), dateAsArr[2])
-    let date5 = String(dateAsDate)
+   let date5 = String(dateAsDate)
     
     const today = new Date();
     let msPerDay = 24 * 60 * 60 * 1000
@@ -27,10 +27,10 @@ function DaysContainer(props) {
                 year: "numeric",
                 month: "long",
                 day: "2-digit"}).format(today)}</p>
-            <p>date2: date entered as string: {dateAsStr}</p>
+             <p>date2: date entered as string: {dateAsStr}</p>
             
             <p>{date5}</p>
-            <p>Days between: {daysBetween}</p>
+            <p>Days between: {daysBetween}</p> 
             
         </div>
     )
@@ -38,7 +38,7 @@ function DaysContainer(props) {
 
 const mapStateToProps = state => {
     return {
-        aDate: state.aDate
+        aDate: state.days.aDate
     }
 }
 

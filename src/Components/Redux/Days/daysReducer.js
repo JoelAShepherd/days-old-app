@@ -1,12 +1,14 @@
 import {DAY_CHANGE} from './dayTypes'
 
-const initState = ''
+const initState = {
+    aDate: ''
+}
 
 const daysReducer = (state = initState, action) => {
     switch(action.type){
         case DAY_CHANGE:
             return{
-                ...state, aDate: action.aDate
+                aDate: action.date
             }
         default:
             return state

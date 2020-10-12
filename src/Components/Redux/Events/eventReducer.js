@@ -25,6 +25,7 @@ const eventReducer = (state = initState, action) =>{
                 event: '',
                 error: action.payload
             }
+        default: return state
     }
 }
 

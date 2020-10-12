@@ -38,7 +38,7 @@ class EventsContainer extends React.Component{
 
 const mapStateToProps = state => {
     return {
-        aDate: state.aDate
+        aDate: state.days.aDate
     }
 }
 
